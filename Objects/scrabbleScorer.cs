@@ -29,6 +29,9 @@ namespace ScrabbleScorer.Objects
       Regex rgx4pt = new Regex(@"(?i)[FHVWY]");
       MatchCollection match4pt = rgx4pt.Matches(this.Word);
       this.Score += (match4pt.Count) * 4;
+      Regex rgx5pt = new Regex(@"(?i)[K]");
+      MatchCollection match5pt = rgx5pt.Matches(this.Word);
+      this.Score += (match5pt.Count) * 5;
     }
   }
 }
