@@ -18,5 +18,16 @@ namespace  ScrabbleScorer
       //Assert
       Assert.Equal(expectedResult, newWord.Score);
     }
+    [Fact]
+    public void Scorer_TwoPointLetters_true()
+    {
+      //Arrange
+      WordScore newWord = new WordScore("d");
+      int expectedResult = 2;
+      //Act
+      newWord.Scorer();
+      //Assert
+      Assert.Equal(expectedResult, newWord.Score);
+    }
   }
 }
