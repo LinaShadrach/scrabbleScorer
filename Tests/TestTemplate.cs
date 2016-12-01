@@ -7,27 +7,21 @@ namespace  ScrabbleScorer
 {
   public class WordScoreTest
   {
-    [Fact]
-    public void Scorer_OnePointLetters_true()
+    [Theory]
+    [InlineData(1, "a")]
+    [InlineData(2, "d")]
+    [InlineData(3, "b")]
+
+    public void Scorer_OneLetter_true(int points, string letter)
     {
       //Arrange
-      WordScore newWord = new WordScore("a");
-      int expectedResult = 1;
+      WordScore newWord = new WordScore(letter);
+      int expectedResult = points;
       //Act
       newWord.Scorer();
       //Assert
       Assert.Equal(expectedResult, newWord.Score);
     }
-    [Fact]
-    public void Scorer_TwoPointLetters_true()
-    {
-      //Arrange
-      WordScore newWord = new WordScore("d");
-      int expectedResult = 2;
-      //Act
-      newWord.Scorer();
-      //Assert
-      Assert.Equal(expectedResult, newWord.Score);
-    }
+    
   }
 }

@@ -23,6 +23,9 @@ namespace ScrabbleScorer.Objects
       Regex rgx2pt = new Regex(@"(?i)[DG]");
       MatchCollection match2pt = rgx2pt.Matches(this.Word);
       this.Score += (match2pt.Count) * 2;
+      Regex rgx3pt = new Regex(@"(?i)[BCMP]");
+      MatchCollection match3pt = rgx3pt.Matches(this.Word);
+      this.Score += (match3pt.Count) * 3;
     }
   }
 }
