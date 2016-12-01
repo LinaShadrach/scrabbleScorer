@@ -14,6 +14,7 @@ namespace  ScrabbleScorer
     [InlineData(4, "f")]
     [InlineData(5, "k")]
     [InlineData(8, "j")]
+    [InlineData(10, "z")]
 
     public void Scorer_OneLetter_true(int points, string letter)
     {

@@ -35,6 +35,9 @@ namespace ScrabbleScorer.Objects
       Regex rgx8pt = new Regex(@"(?i)[JX]");
       MatchCollection match8pt = rgx8pt.Matches(this.Word);
       this.Score += (match8pt.Count) * 8;
+      Regex rgx10pt = new Regex(@"(?i)[QZ]");
+      MatchCollection match10pt = rgx10pt.Matches(this.Word);
+      this.Score += (match10pt.Count) * 10;
     }
   }
 }
