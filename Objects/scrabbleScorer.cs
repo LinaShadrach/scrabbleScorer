@@ -17,27 +17,14 @@ namespace ScrabbleScorer.Objects
 
     public void Scorer()
     {
-      Regex rgx1pt = new Regex(@"(?i)[AEIOULNRST]");
-      MatchCollection match1pt = rgx1pt.Matches(this.Word);
-      this.Score += match1pt.Count;
-      Regex rgx2pt = new Regex(@"(?i)[DG]");
-      MatchCollection match2pt = rgx2pt.Matches(this.Word);
-      this.Score += (match2pt.Count) * 2;
-      Regex rgx3pt = new Regex(@"(?i)[BCMP]");
-      MatchCollection match3pt = rgx3pt.Matches(this.Word);
-      this.Score += (match3pt.Count) * 3;
-      Regex rgx4pt = new Regex(@"(?i)[FHVWY]");
-      MatchCollection match4pt = rgx4pt.Matches(this.Word);
-      this.Score += (match4pt.Count) * 4;
-      Regex rgx5pt = new Regex(@"(?i)[K]");
-      MatchCollection match5pt = rgx5pt.Matches(this.Word);
-      this.Score += (match5pt.Count) * 5;
-      Regex rgx8pt = new Regex(@"(?i)[JX]");
-      MatchCollection match8pt = rgx8pt.Matches(this.Word);
-      this.Score += (match8pt.Count) * 8;
-      Regex rgx10pt = new Regex(@"(?i)[QZ]");
-      MatchCollection match10pt = rgx10pt.Matches(this.Word);
-      this.Score += (match10pt.Count) * 10;
+      string[] patternsArr= {"(?i)[AEIOULNRST]", "(?i)[DG]", "(?i)[BCMP]", "(?i)[FHVWY]", "(?i)[K]", "(?i)[JX]", "(?i)[QZ]"};
+      int[] pointsArr = {1, 2, 3, 4, 5, 8, 10};
+      for(int i = 0; i < 7; i++)
+      {
+        Regex rgxPts = new Regex(patternsArr[i]);
+        MatchCollection matchPts = rgxPts.Matches(this.Word);
+        this.Score += (matchPts.Count)*pointsArr[i];
+      }
     }
   }
 }
