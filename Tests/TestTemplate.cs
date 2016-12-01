@@ -15,8 +15,10 @@ namespace  ScrabbleScorer
     [InlineData(5, "k")]
     [InlineData(8, "j")]
     [InlineData(10, "z")]
+    [InlineData(9, "cave")]
 
-    public void Scorer_OneLetter_true(int points, string letter)
+
+    public void Scorer_ScoreWord_true(int points, string letter)
     {
       //Arrange
       WordScore newWord = new WordScore(letter);
