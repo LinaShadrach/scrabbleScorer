@@ -11,6 +11,7 @@ namespace  ScrabbleScorer
     [InlineData(1, "a")]
     [InlineData(2, "d")]
     [InlineData(3, "b")]
+    [InlineData(4, "f")]
 
     public void Scorer_OneLetter_true(int points, string letter)
     {
@@ -22,6 +23,6 @@ namespace  ScrabbleScorer
       //Assert
       Assert.Equal(expectedResult, newWord.Score);
     }
-    
+
   }
 }
